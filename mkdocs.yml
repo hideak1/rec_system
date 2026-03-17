@@ -1,0 +1,191 @@
+site_name: "Recommendation Systems: From Foundations to Production"
+site_description: "A comprehensive learning resource covering CTR prediction, generative recommendation, and modern industrial systems from Meta, Tencent, and beyond"
+site_author: "RecSys Study Project"
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: deep-purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep-purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      include_source: true
+      execute: false
+      allow_errors: true
+      include: ["*.ipynb"]
+      ignore: [".*"]
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.emoji
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+
+nav:
+  - Home: index.md
+  - "Part 1: Foundations":
+    - Overview: part1_foundations/index.md
+    - "1.1 The Recommendation Problem": notebooks/part1/chapter_1.1_recommendation_problem.ipynb
+    - "1.2 User-Item Interaction Data": notebooks/part1/chapter_1.2_interaction_data.ipynb
+    - "1.3 Classical Collaborative Filtering": notebooks/part1/chapter_1.3_collaborative_filtering.ipynb
+    - "1.4 Embedding Fundamentals": notebooks/part1/chapter_1.4_embeddings.ipynb
+    - "1.5 Deep Learning Building Blocks": notebooks/part1/chapter_1.5_dl_building_blocks.ipynb
+    - "1.6 Feature Engineering for RecSys": notebooks/part1/chapter_1.6_feature_engineering.ipynb
+    - "1.7 The Modern RecSys Pipeline": notebooks/part1/chapter_1.7_modern_pipeline.ipynb
+    - "1.8 Datasets & Benchmarking": notebooks/part1/chapter_1.8_datasets.ipynb
+  - "Part 2: CTR Prediction":
+    - Overview: part2_ctr_foundations/index.md
+    - "2.1 Logistic Regression & FTRL": notebooks/part2/chapter_2.1_lr_ftrl.ipynb
+    - "2.2 Factorization Machines": notebooks/part2/chapter_2.2_factorization_machines.ipynb
+    - "2.3 Wide & Deep Learning": notebooks/part2/chapter_2.3_wide_deep.ipynb
+    - "2.4 DeepFM & Deep Feature Interaction": notebooks/part2/chapter_2.4_deepfm.ipynb
+    - "2.5 Attention-based CTR Models": notebooks/part2/chapter_2.5_attention_ctr.ipynb
+    - "2.6 Multi-Task Learning for RecSys": notebooks/part2/chapter_2.6_multi_task.ipynb
+    - "2.7 Feature Interaction at Scale": notebooks/part2/chapter_2.7_feature_interaction.ipynb
+    - "2.8 Calibration & Bias in CTR": notebooks/part2/chapter_2.8_calibration_bias.ipynb
+  - "Part 3: Retrieval Systems":
+    - Overview: part3_retrieval/index.md
+    - "3.1 Two-Tower Architecture": notebooks/part3/chapter_3.1_two_tower.ipynb
+    - "3.2 Approximate Nearest Neighbor Search": notebooks/part3/chapter_3.2_ann_search.ipynb
+    - "3.3 Multi-Interest Retrieval": notebooks/part3/chapter_3.3_multi_interest.ipynb
+    - "3.4 Graph-based Retrieval": notebooks/part3/chapter_3.4_graph_retrieval.ipynb
+    - "3.5 Sequential Retrieval": notebooks/part3/chapter_3.5_sequential_retrieval.ipynb
+    - "3.6 Semantic ID Methods": notebooks/part3/chapter_3.6_semantic_ids.ipynb
+    - "3.7 Generative Retrieval": notebooks/part3/chapter_3.7_generative_retrieval.ipynb
+    - "3.8 Pre-ranking & Lightweight Scoring": notebooks/part3/chapter_3.8_pre_ranking.ipynb
+    - "3.9 Multi-Source Retrieval Fusion": notebooks/part3/chapter_3.9_retrieval_fusion.ipynb
+  - "Part 4: Advanced Ranking":
+    - Overview: part4_ranking/index.md
+    - "4.1 Modern CTR Architectures": notebooks/part4/chapter_4.1_modern_ctr.ipynb
+    - "4.2 User Behavior Modeling": notebooks/part4/chapter_4.2_user_behavior.ipynb
+    - "4.3 Pre-trained Models for Ranking": notebooks/part4/chapter_4.3_pretrained_ranking.ipynb
+    - "4.4 Multi-Scenario & Transfer Learning": notebooks/part4/chapter_4.4_multi_scenario.ipynb
+    - "4.5 Knowledge Distillation for Ranking": notebooks/part4/chapter_4.5_distillation.ipynb
+    - "4.6 Ranking Optimization Tricks": notebooks/part4/chapter_4.6_optimization_tricks.ipynb
+    - "4.7 Listwise & Context-aware Ranking": notebooks/part4/chapter_4.7_listwise_ranking.ipynb
+    - "4.8 Multi-Objective Ranking": notebooks/part4/chapter_4.8_multi_objective.ipynb
+  - "Part 5: Sequential & Graph":
+    - Overview: part5_sequential_graph/index.md
+    - "5.1 Session-based Methods": notebooks/part5/chapter_5.1_session_based.ipynb
+    - "5.2 Self-Attention for Sequences": notebooks/part5/chapter_5.2_self_attention_seq.ipynb
+    - "5.3 Temporal & Dynamic Models": notebooks/part5/chapter_5.3_temporal_models.ipynb
+    - "5.4 Contrastive Learning for Sequences": notebooks/part5/chapter_5.4_contrastive_seq.ipynb
+    - "5.5 Graph Neural Networks for RecSys": notebooks/part5/chapter_5.5_gnn_recsys.ipynb
+    - "5.6 Knowledge Graph Enhanced Rec": notebooks/part5/chapter_5.6_kg_rec.ipynb
+    - "5.7 Social & Heterogeneous Graphs": notebooks/part5/chapter_5.7_social_graphs.ipynb
+    - "5.8 Scalable Graph Rec": notebooks/part5/chapter_5.8_scalable_graph.ipynb
+  - "Part 6: Generative RecSys":
+    - Overview: part6_generative/index.md
+    - "6.1 VAE for Collaborative Filtering": notebooks/part6/chapter_6.1_vae_cf.ipynb
+    - "6.2 GAN-based Recommendation": notebooks/part6/chapter_6.2_gan_rec.ipynb
+    - "6.3 Diffusion Models for Rec": notebooks/part6/chapter_6.3_diffusion_rec.ipynb
+    - "6.4 LLM as Recommender — Foundations": notebooks/part6/chapter_6.4_llm_rec_foundations.ipynb
+    - "6.5 LLM as Feature Encoder": notebooks/part6/chapter_6.5_llm_feature_encoder.ipynb
+    - "6.6 LLM as Ranker": notebooks/part6/chapter_6.6_llm_ranker.ipynb
+    - "6.7 Conversational Recommendation": notebooks/part6/chapter_6.7_conversational_rec.ipynb
+    - "6.8 Multimodal Recommendation": notebooks/part6/chapter_6.8_multimodal_rec.ipynb
+    - "6.9 HSTU & Unified Generative Rec": notebooks/part6/chapter_6.9_hstu_unified.ipynb
+    - "6.10 Evaluation of Generative Rec": notebooks/part6/chapter_6.10_eval_generative.ipynb
+  - "Part 7: Agent & Interactive":
+    - Overview: part7_agent_interactive/index.md
+    - "7.1 Reinforcement Learning for Rec": notebooks/part7/chapter_7.1_rl_rec.ipynb
+    - "7.2 RL in Production Systems": notebooks/part7/chapter_7.2_rl_production.ipynb
+    - "7.3 LLM Agents for Recommendation": notebooks/part7/chapter_7.3_llm_agents.ipynb
+    - "7.4 Multi-Agent Recommendation": notebooks/part7/chapter_7.4_multi_agent.ipynb
+    - "7.5 Tool-Augmented Rec Agents": notebooks/part7/chapter_7.5_tool_augmented.ipynb
+    - "7.6 Explanation & Reasoning": notebooks/part7/chapter_7.6_explanation.ipynb
+    - "7.7 Feedback Loops & Long-term Optimization": notebooks/part7/chapter_7.7_feedback_loops.ipynb
+    - "7.8 Autonomous Recommendation Systems": notebooks/part7/chapter_7.8_autonomous.ipynb
+  - "Part 8: Industrial Embeddings":
+    - Overview: part8_industrial_embeddings/index.md
+    - "8.1 Embedding Tables at Scale": notebooks/part8/chapter_8.1_embedding_scale.ipynb
+    - "8.2 Embedding Compression": notebooks/part8/chapter_8.2_embedding_compression.ipynb
+    - "8.3 Feature Stores & Real-time Features": notebooks/part8/chapter_8.3_feature_stores.ipynb
+    - "8.4 ID vs ID-free Systems": notebooks/part8/chapter_8.4_id_vs_idfree.ipynb
+    - "8.5 User Modeling at Scale": notebooks/part8/chapter_8.5_user_modeling.ipynb
+    - "8.6 Item Understanding": notebooks/part8/chapter_8.6_item_understanding.ipynb
+    - "8.7 Cross-Platform & Cross-Domain": notebooks/part8/chapter_8.7_cross_domain.ipynb
+    - "8.8 Privacy-Preserving Features": notebooks/part8/chapter_8.8_privacy.ipynb
+  - "Part 9: Training Infrastructure":
+    - Overview: part9_training_infra/index.md
+    - "9.1 Large-Scale Data Pipelines": notebooks/part9/chapter_9.1_data_pipelines.ipynb
+    - "9.2 Distributed Training for RecSys": notebooks/part9/chapter_9.2_distributed_training.ipynb
+    - "9.3 Mixed-Precision & Quantization": notebooks/part9/chapter_9.3_mixed_precision.ipynb
+    - "9.4 Embedding Training Optimization": notebooks/part9/chapter_9.4_embedding_optimization.ipynb
+    - "9.5 Incremental & Online Training": notebooks/part9/chapter_9.5_incremental_training.ipynb
+    - "9.6 Training Frameworks": notebooks/part9/chapter_9.6_training_frameworks.ipynb
+    - "9.7 Hyperparameter Optimization": notebooks/part9/chapter_9.7_hpo.ipynb
+    - "9.8 Cost-Efficient Training": notebooks/part9/chapter_9.8_cost_efficient.ipynb
+  - "Part 10: Serving & Production":
+    - Overview: part10_serving_production/index.md
+    - "10.1 RecSys Serving Architecture": notebooks/part10/chapter_10.1_serving_arch.ipynb
+    - "10.2 Model Optimization for Serving": notebooks/part10/chapter_10.2_model_optimization.ipynb
+    - "10.3 Real-time Inference": notebooks/part10/chapter_10.3_realtime_inference.ipynb
+    - "10.4 A/B Testing & Experimentation": notebooks/part10/chapter_10.4_ab_testing.ipynb
+    - "10.5 Monitoring & Observability": notebooks/part10/chapter_10.5_monitoring.ipynb
+    - "10.6 Meta's Production Stack": notebooks/part10/chapter_10.6_meta_stack.ipynb
+    - "10.7 Tencent's Production Stack": notebooks/part10/chapter_10.7_tencent_stack.ipynb
+    - "10.8 ByteDance, Alibaba & Others": notebooks/part10/chapter_10.8_other_stacks.ipynb
+  - "Part 11: Evaluation & Fairness":
+    - Overview: part11_evaluation_fairness/index.md
+    - "11.1 Offline Evaluation Deep Dive": notebooks/part11/chapter_11.1_offline_eval.ipynb
+    - "11.2 Online Evaluation & Metrics": notebooks/part11/chapter_11.2_online_eval.ipynb
+    - "11.3 Counterfactual Evaluation": notebooks/part11/chapter_11.3_counterfactual.ipynb
+    - "11.4 Bias in Recommendation": notebooks/part11/chapter_11.4_bias.ipynb
+    - "11.5 Fairness in Recommendation": notebooks/part11/chapter_11.5_fairness.ipynb
+    - "11.6 Responsible AI for RecSys": notebooks/part11/chapter_11.6_responsible_ai.ipynb
+    - "11.7 Causal Inference for RecSys": notebooks/part11/chapter_11.7_causal_inference.ipynb
+    - "11.8 Trustworthy Recommendation": notebooks/part11/chapter_11.8_trustworthy.ipynb
+  - "Part 12: Research Frontiers":
+    - Overview: part12_research_frontiers/index.md
+    - "12.1 Foundation Models for Rec": notebooks/part12/chapter_12.1_foundation_models.ipynb
+    - "12.2 Recommendation as Generation": notebooks/part12/chapter_12.2_rec_as_generation.ipynb
+    - "12.3 World Models for Rec": notebooks/part12/chapter_12.3_world_models.ipynb
+    - "12.4 Retrieval-Augmented Rec": notebooks/part12/chapter_12.4_rag_rec.ipynb
+    - "12.5 On-Device & Edge Rec": notebooks/part12/chapter_12.5_on_device.ipynb
+    - "12.6 Multi-Objective Ecosystem": notebooks/part12/chapter_12.6_ecosystem.ipynb
+    - "12.7 Emerging Modalities": notebooks/part12/chapter_12.7_emerging_modalities.ipynb
+    - "12.8 Neuroscience-Inspired RecSys": notebooks/part12/chapter_12.8_neuroscience.ipynb
+    - "12.9 Benchmarks & Reproducibility": notebooks/part12/chapter_12.9_benchmarks.ipynb
+    - "12.10 Capstone: Build Your Own RecSys": notebooks/part12/chapter_12.10_capstone.ipynb
