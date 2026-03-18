@@ -3,14 +3,6 @@ window.MathJax = {
     inlineMath: [["$", "$"], ["\\(", "\\)"]],
     displayMath: [["$$", "$$"], ["\\[", "\\]"]],
     processEscapes: true,
-    processEnvironments: true,
-  },
-  options: {
-    ignoreHtmlClass: ".*|",
-    processHtmlClass: "arithmatex|md-typeset|jp-RenderedHTMLCommon|jp-RenderedMarkdown|cell_output",
-  },
+    processEnvironments: true
+  }
 };
-
-document$.subscribe(() => {
-  MathJax.typesetPromise();
-});
