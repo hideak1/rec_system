@@ -6,3 +6,9 @@ window.MathJax = {
     processEnvironments: true
   }
 };
+
+// Suppress mkdocs-jupyter's MathJax v2 Hub.Config calls
+window.MathJax.Hub = {
+  Config: function() {},
+  Queue: function() {}
+};
