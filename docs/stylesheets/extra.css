@@ -1,0 +1,322 @@
+/* ============================================
+   Next.js-inspired design for MkDocs Material
+   ============================================ */
+
+/* -- Root variables -- */
+:root {
+  --md-primary-fg-color: #000;
+  --md-primary-bg-color: #fff;
+  --hero-gradient-start: #0070f3;
+  --hero-gradient-end: #00a6ff;
+  --card-border: #eaeaea;
+  --card-hover-border: #0070f3;
+  --card-bg: #fafafa;
+  --badge-bg: #f0f0f0;
+  --badge-text: #666;
+  --stats-color: #0070f3;
+}
+
+[data-md-color-scheme="slate"] {
+  --card-border: #333;
+  --card-hover-border: #0070f3;
+  --card-bg: #1a1a1a;
+  --badge-bg: #2a2a2a;
+  --badge-text: #999;
+}
+
+/* -- Typography -- */
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2em;
+}
+
+/* -- Hero Section -- */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  margin: -0.5rem -0.5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3.2rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--hero-gradient-start), var(--hero-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .hero-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+[data-md-color-scheme="slate"] .hero .hero-subtitle {
+  color: #999;
+}
+
+.hero .hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.hero .hero-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.hero .hero-buttons .btn-primary {
+  background: #0070f3;
+  color: #fff !important;
+  border: 1px solid #0070f3;
+}
+
+.hero .hero-buttons .btn-primary:hover {
+  background: #0060df;
+  box-shadow: 0 4px 14px rgba(0, 112, 243, 0.4);
+}
+
+.hero .hero-buttons .btn-secondary {
+  background: transparent;
+  color: var(--md-default-fg-color) !important;
+  border: 1px solid var(--card-border);
+}
+
+.hero .hero-buttons .btn-secondary:hover {
+  border-color: #0070f3;
+  color: #0070f3 !important;
+}
+
+/* -- Stats Bar -- */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1.5rem 0;
+  margin-bottom: 3rem;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.stats-bar .stat {
+  text-align: center;
+}
+
+.stats-bar .stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--stats-color);
+  display: block;
+}
+
+.stats-bar .stat-label {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+[data-md-color-scheme="slate"] .stats-bar .stat-label {
+  color: #999;
+}
+
+/* -- Grid Cards -- */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.grid-cards .card {
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+}
+
+.grid-cards .card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+[data-md-color-scheme="slate"] .grid-cards .card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.grid-cards .card .card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.grid-cards .card .card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.grid-cards .card .card-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  display: block;
+}
+
+[data-md-color-scheme="slate"] .grid-cards .card .card-desc {
+  color: #999;
+}
+
+.grid-cards .card .card-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  margin-top: 0.75rem;
+}
+
+/* -- Section Headers -- */
+.section-header {
+  margin: 3rem 0 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.8rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.section-header p {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+[data-md-color-scheme="slate"] .section-header p {
+  color: #999;
+}
+
+/* -- Pipeline Diagram -- */
+.pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--card-bg);
+}
+
+.pipeline .stage {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.pipeline .arrow {
+  color: #999;
+  font-size: 1.2rem;
+  padding: 0 0.3rem;
+}
+
+.pipeline .stage-retrieval { background: #dbeafe; color: #1e40af; }
+.pipeline .stage-prerank { background: #e0e7ff; color: #3730a3; }
+.pipeline .stage-rank { background: #ede9fe; color: #5b21b6; }
+.pipeline .stage-rerank { background: #fae8ff; color: #86198f; }
+.pipeline .stage-serve { background: #fce7f3; color: #9d174d; }
+
+[data-md-color-scheme="slate"] .pipeline .stage-retrieval { background: #1e3a5f; color: #93c5fd; }
+[data-md-color-scheme="slate"] .pipeline .stage-prerank { background: #2e1065; color: #c4b5fd; }
+[data-md-color-scheme="slate"] .pipeline .stage-rank { background: #3b0764; color: #d8b4fe; }
+[data-md-color-scheme="slate"] .pipeline .stage-rerank { background: #4a044e; color: #f0abfc; }
+[data-md-color-scheme="slate"] .pipeline .stage-serve { background: #500724; color: #f9a8d4; }
+
+/* -- Company Logos Row -- */
+.companies {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.5rem 0;
+  margin: 1rem 0 2rem;
+  flex-wrap: wrap;
+  opacity: 0.6;
+}
+
+.companies span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* -- Footer adjustments -- */
+.md-footer {
+  margin-top: 4rem;
+}
+
+/* -- Responsive -- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem !important;
+  }
+  .hero .hero-subtitle {
+    font-size: 1.05rem;
+  }
+  .stats-bar {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .stats-bar .stat-number {
+    font-size: 1.5rem;
+  }
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
+  .pipeline {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .pipeline .arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* -- Hide title on homepage -- */
+.md-content .md-typeset h1:first-child {
+  display: none;
+}
