@@ -39,7 +39,7 @@ Inspired by [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.i
 ### Run Locally
 
 ```bash
-git clone https://github.com/hideak1/rec_system.git
+git clone git@github.com:hideak1/rec_system.git
 cd rec_system
 make install    # Install all dependencies
 make serve      # Start docs site + Jupyter server

@@ -69,7 +69,7 @@ Part 11 (Evaluation & Fairness) → Part 12 (Research Frontiers)
 
 ### Quick Start (Recommended)
 ```bash
-git clone <repo-url>
+git clone git@github.com:hideak1/rec_system.git
 cd rec_system
 make install   # Install dependencies
 make serve     # Start docs + Jupyter servers
