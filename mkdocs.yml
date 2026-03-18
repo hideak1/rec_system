@@ -50,6 +50,10 @@ plugins:
       allow_errors: true
       include: ["*.ipynb"]
       ignore: [".*"]
+      no_input: false
+      show_input: true
+      include_requirejs: false
+      custom_mathjax_url: ""
 
 markdown_extensions:
   - pymdownx.highlight:
