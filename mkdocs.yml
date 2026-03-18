@@ -22,11 +22,10 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - announce.dismiss
-    - header.autohide
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: black
+      primary: white
       accent: blue
       toggle:
         icon: material/brightness-7
